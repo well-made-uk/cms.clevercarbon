@@ -1,6 +1,48 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/7.jpg" "title" "This is where the heading goes" "subtitle" "This is where the subtitle goes") }}
-{{ .Content }}
+<div class="main-wrapper">
+    <div id="hero" class="section_hero">
+        <div class="padding-global-fixed">
+            <div class="container-small">
+                <div class="padding-section-small">
+                    <div class="flex gap-4rem vertical-align-center">
+                        {{ with .Params.header_left }}
+                        <img
+                                src="{{ . }}"
+                                loading="lazy" alt="" class="max-width-5rem mobile-hide">
+                        {{ end }}
+                        <h1 class="heading-style-h1 font-style-berlingske text-align-center">{{ .Title }}</h1>
+                        {{ with .Params.header_right }}
+                        <img
+                                src="{{ . }}"
+                                loading="lazy" alt="" class="max-width-5rem mobile-hide">
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="section_content text-align-center">
+        <div class="padding-section-small">
+            <div class="padding-global"
+                 style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                <div class="container-small">
+                    <div class="padding-top padding-medium">
+                        {{ if .Params.bits_and_pieces }}
+                        <img
+                                src="https://cdn.prod.website-files.com/65c771cc39ce7106362f82a4/65f9e8ac9c5b161eb48cd056_Cloud-Left.svg"
+                                loading="lazy" data-w-id="50d0f19d-29e7-bd5e-a3d5-6170361665b5" alt=""
+                                class="component_cloud right absolute-top-right"
+                                style="will-change: transform; transform: translate3d(0px, -3.0762vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(180deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"/>
+                        <img
+                                src="https://cdn.prod.website-files.com/65c771cc39ce7106362f82a4/65fa0bdafea62ee7a5561015_Asset-55.svg"
+                                loading="lazy" alt="" class="component_stars absolute-top-left"/>
+                        {{ end }}
+                        {{ .Content | safeHTML }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {{ end }}
