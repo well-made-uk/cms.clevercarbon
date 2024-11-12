@@ -11,7 +11,7 @@ export default class PostPreview extends React.Component {
         <p>Read in x minutes</p>
       </div>
       <div className="cms mw6">
-        { widgetFor("body") }
+        { widgetFor("content") }
       </div>
     </div>;
   }
