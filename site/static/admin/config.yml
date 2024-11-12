@@ -5,6 +5,8 @@ backend:
 media_folder: "site/static/images" # Folder where user uploaded files should go
 public_folder: "images"
 
+show_preview_links: true
+
 collections:
   - name: "pages"
     label: "Pages"
@@ -24,7 +26,7 @@ collections:
         name: "redirects"
         file: "site/static/_redirects"
         editor:
-          { preview : "false" }
+          preview : "false"
         fields:
           - label: "Redirects"
             name: "redirects"
