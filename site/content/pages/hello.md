@@ -1,8 +1,6 @@
 ---
 title: Hello :))
 content: >-
-  
-
   This means:
 
 
