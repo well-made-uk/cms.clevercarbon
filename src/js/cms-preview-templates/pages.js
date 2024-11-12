@@ -2,24 +2,31 @@ import React from "react";
 import "./font.css";
 
 export default class PostPreview extends React.Component {
+  makeImageUrl(relativeUrl) {
+    // Handles the case when running within the CMS Preview Panel
+    if (window.CMS_PUBLIC_PATH) {
+      return `${window.CMS_PUBLIC_PATH}${relativeUrl}`
+    }
+    // Handles the case when running in production
+    return relativeUrl;
+  }
+
   render() {
     const {entry, widgetFor} = this.props;
     const headerLeft = entry.getIn(["data", "header_left"]);
     const headerRight = entry.getIn(["data", "header_right"]);
     const bitsAndPieces = entry.getIn(["data", "bits_and_pieces"]);
 
-    const baseUrl = window.CMS_PUBLIC_PATH || '';
-
     return (
       <div>
         <div className="main-wrapper"
           style={{position:"relative", maxWidth:"768px", margin: "auto", fontSize:"16px", fontFamily: "\"Avenir Next\", sans-serif", lineHeight: "1.5"}}>
           <div id="hero" className="section_hero" style={{display:"flex", gap:"4rem", alignItems:"center", justifyContent: "center"}}>
-            {headerLeft && <img src={`${baseUrl}${headerLeft}`} loading="lazy" alt="" style={{maxWidth:"5rem", width:"100%"}}/>}
+            {headerLeft && <img src={this.makeImageUrl(headerLeft)} loading="lazy" alt="" style={{maxWidth:"5rem", width:"100%"}}/>}
             <h1 style={{fontSize: "3.8rem", fontWeight: 700, lineHeight: 1, textAlign: "center", fontFamily: "Berlingske, sans-serif"}}>
               {entry.getIn(["data", "title"])}
             </h1>
-            {headerRight && <img src={`${baseUrl}${headerRight}`} loading="lazy" alt="" style={{maxWidth:"5rem", width:"100%"}}/>}
+            {headerRight && <img src={this.makeImageUrl(headerRight)} loading="lazy" alt="" style={{maxWidth:"5rem", width:"100%"}}/>}
           </div>
           <div id="content" style={{position:"relative"}}>
             {bitsAndPieces &&
