@@ -37,7 +37,7 @@ export default class PostPreview extends React.Component {
                             loading="lazy" alt="" className="component_stars absolute-top-left"/>
                         </>
                     }
-                    {widgetFor("content")}
+                    {widgetFor("body")}
                   </div>
                 </div>
               </div>

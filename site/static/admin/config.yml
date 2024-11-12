@@ -13,7 +13,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Content", name: "content", widget: "markdown"}
+      - {label: "Content", name: "body", widget: "markdown"}
       - {label: "Bits and Pieces", name: "bits_and_pieces", widget: "boolean", default: true, required: false}
       - {label: "Header Image Left", name: "header_left", widget: "image", required: false}
       - {label: "Header Image Right", name: "header_right", widget: "image", required: false}
