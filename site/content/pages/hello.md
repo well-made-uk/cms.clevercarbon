@@ -26,5 +26,5 @@ content: >-
 
 
   You can refer to the Decap CMS or Netlify CMS documentation or community for more detailed and specific guidance on your particular settings and CMS version.
-bits_and_pieces: true
+bits_and_pieces: false
 ---
