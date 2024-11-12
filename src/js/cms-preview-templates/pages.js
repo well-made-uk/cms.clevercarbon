@@ -1,4 +1,5 @@
 import React from "react";
+import "./font.css";
 
 export default class PostPreview extends React.Component {
   render() {
@@ -10,7 +11,7 @@ export default class PostPreview extends React.Component {
     return (
       <div>
         <div className="main-wrapper"
-          style={{position:"relative", maxWidth:"768px", fontSize:"19.2px", fontFamily: "\"Avenir Next\", sans-serif", lineHeight: "1.5"}}>
+          style={{position:"relative", maxWidth:"768px", fontSize:"16px", fontFamily: "\"Avenir Next\", sans-serif", lineHeight: "1.5"}}>
           <div id="hero" className="section_hero" style={{display:"flex", gap:"4rem", alignItems:"center"}}>
             {headerLeft && <img src={headerLeft} loading="lazy" alt="" style={{maxWidth:"5rem", width:"100%"}}/>}
             <h1 style={{fontSize: "3.8rem", fontWeight: 700, lineHeight: 1, textAlign: "center", fontFamily: "Berlingske, sans-serif"}}>

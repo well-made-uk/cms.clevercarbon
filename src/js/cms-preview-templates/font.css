@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('./Avenir-Medium-1.woff2') format('truetype');
+}
+
+@font-face {
+    font-family: 'Berlingske';
+    src: url('./berlingskeserif-md-2-webfont.woff2') format('opentype');
+}
