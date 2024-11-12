@@ -27,4 +27,11 @@ content: >-
 
   You can refer to the Decap CMS or Netlify CMS documentation or community for more detailed and specific guidance on your particular settings and CMS version.
 bits_and_pieces: false
+header_left: images/1.svg
+header_right: images/2.svg
 ---
+The netlify-cms stores content in Markdown files which are structured with front matter fields plus content. Therefore, you should ensure that the content of these markdown files is captured under the body field when configuring your netlify-cms.
+
+Your current setup may likely be storing the content under content field in the frontmatter, which is why .Content does not display anything.
+
+To solve this, you might want to change your netlify-cms configuration from;
